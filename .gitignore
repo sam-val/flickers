@@ -1,0 +1,6 @@
+### local IDE/Editor files:
+venv
+.idea
+
+### local testing python file
+demo.py
