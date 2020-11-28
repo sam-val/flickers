@@ -8,7 +8,7 @@
 
 It's the mechanism that film projector uses to create the illusion of moving pictures.
 
-But because of the monitor **``refreshing rate``**... 
+## But because of the monitor **``refreshing rate``**... 
 
 ...I suppose the flickers on monitor doesn't behave the same way as that in real life. 
 
