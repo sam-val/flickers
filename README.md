@@ -14,6 +14,22 @@ But because of the monitor **``refreshing rate``**...
 
 #### ``>> Download and check it out for yourself!`` 
 
+## How:
+
+0. Install Python3 which comes with ``pip``
+
+1. Upgrade ``pip``
+
+```
+>> pip3 install --upgrade pip
+```
+2. Go to the root folder and run:
+
+```
+>> pip3 install -r requirements.txt
+>> python3 main.py
+```
+
 [wiki]: https://en.wikipedia.org/wiki/Flicker_fusion_threshold
 
 ##  A glimpse of the program:
