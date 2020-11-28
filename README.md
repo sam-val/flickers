@@ -23,7 +23,7 @@ But because of the monitor **``refreshing rate``**...
 ```
 >> pip3 install --upgrade pip
 ```
-2. Go to the root folder and run:
+2. Go to the root folder of the project and run:
 
 ```
 >> pip3 install -r requirements.txt
