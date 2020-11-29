@@ -1,14 +1,14 @@
 *(a flicker of a imgage is a when it goes away and comes back again quickly)*
 
-## Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
+### Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
 
- Basically it states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second...
+Basically it states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second...
  
-## ...the flickers will *``dissapear``*.
+### ...the flickers will *``dissapear``*.
 
 It's the mechanism that film projector uses to create the illusion of moving pictures.
 
-## But because of the monitor **``refreshing rate``**... 
+### But because of the monitor **``refreshing rate``**... 
 
 ...I suppose the flickers on monitor doesn't behave the same way as that in real life. 
 
