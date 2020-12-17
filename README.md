@@ -12,7 +12,7 @@ But because of the monitor refreshing rate. It sort of turns into the wagon whee
 
 ***``>> Download and check it out for yourself!``***
 
-## How:
+## Installation:
 
 0. Install Python3 which comes with ``pip``
 
