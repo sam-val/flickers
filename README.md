@@ -1,6 +1,6 @@
 *(a flicker of a imgage is a when it goes away and comes back again quickly)*
 
-### Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
+## Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
 
 Basically it states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second...
  
