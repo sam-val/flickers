@@ -1,4 +1,4 @@
-*(a flicker of a imgage is a when it goes away and comes back again quickly)*
+*(a flicker of an imgage is when it goes away and comes back quickly)*
 
 ## Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
 
