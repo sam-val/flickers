@@ -1,2 +1,5 @@
-PyQt5==5.15.1
-PyQt5-sip==12.8.1
+PyQt6      6.4.2
+PyQt6-Qt6  6.4.2
+PyQt6-sip  13.4.1
+setuptools 65.6.3
+
