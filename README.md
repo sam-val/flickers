@@ -8,8 +8,6 @@ Basically it states that if an image flickers with **``enough speed``** to a cer
 
 It's the mechanism that film projector uses to create the illusion of moving pictures.
 
-But because of the monitor refreshing rate. It sort of turns into the wagon wheel effect I think. 
-
 ***``>> Download and check it out for yourself!``***
 
 ## Installation:
