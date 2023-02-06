@@ -1,5 +1,11 @@
 import sys, time
-from PyQt5.Qt import *
+from PyQt6.QtCore import pyqtSignal, QThread, Qt
+from PyQt6.QtWidgets import *
+from PyQt6.QtGui import *
+
+# Can also get the refresh rate from system monitor
+# but here I hard-code it
+refresh_rate = 1/60
 
 class Colour(QWidget):
     def __init__(self, color, *args, **kwargs):
@@ -8,7 +14,7 @@ class Colour(QWidget):
         # self.setMaximumHeight(100)
 
         palette = self.palette()
-        palette.setColor(QPalette.Window, QColor(color))
+        palette.setColor(QPalette.ColorRole.Window, QColor(color))
         self.setPalette(palette)
 
 class My_Slider(QSlider):
@@ -19,7 +25,7 @@ class My_Slider(QSlider):
         self.setMinimum(start)
         self.setMaximum(end)
         self.setValue(val)
-        self.setTickPosition(QSlider.TicksBothSides)
+        self.setTickPosition(QSlider.TickPosition.TicksBothSides)
         self.setTickInterval(interval)
 
 class FlickerThread(QThread):
@@ -36,11 +42,15 @@ class FlickerThread(QThread):
             sleeping_time = 0
             if self.val != 0:
                 self.show = not self.show
-                sleeping_time = 1/(self.val*2)
+                if self.show:
+                    sleeping_time = refresh_rate
+                else:
+                    sleeping_time = (1-refresh_rate*self.val)/((self.val)+1)
+                    if sleeping_time < 0:
+                        sleeping_time = 0
             else:
-                self.show = True
+                self.show = False
 
-            # print(sleeping_time)
             self.boolean_value_flipped.emit(self.show)
             time.sleep(sleeping_time)
 
@@ -56,7 +66,7 @@ class MainWin(QMainWindow):
         ## Elements:
             ## set-up slider and its titles:
         orginal_val = 0
-        self.slider = My_Slider(Qt.Horizontal, orginal_val, 100, 0, 5, minimum_height=30)
+        self.slider = My_Slider(Qt.Orientation.Horizontal, orginal_val, 100, 0, 5, minimum_height=30)
         self.slider.valueChanged.connect(self.sliderValueChanged)
 
         # Set-up Layout:
@@ -100,7 +110,7 @@ class MainWin(QMainWindow):
         self.setCentralWidget(dummy_widget)
 
     def keyPressEvent(self, e):
-        if e.key() == Qt.Key_Q:
+        if e.key() == Qt.Key.Key_Q:
             # closing
             print("Closing")
             self.flicker_thread.cancelled = True
@@ -108,7 +118,7 @@ class MainWin(QMainWindow):
 
     def change_image(self, path):
         self.img.setPixmap(QPixmap(path))
-        self.img.setAlignment(Qt.AlignHCenter | Qt.AlignVCenter)
+        self.img.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
 
     def sliderValueChanged(self, val):
         self.setWindowTitle(f'{self.title}: {val}')
@@ -126,11 +136,11 @@ class MainWin(QMainWindow):
         for i, title in enumerate(self.slider.titles):
             num = QLabel(str(title))
             num.setMaximumHeight(15)
-            num.setAlignment(Qt.AlignLeft | Qt.AlignBottom)
+            num.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignBottom)
             self.top.addWidget(num, 0, i, 1, 1)
             if i == 4:
                 last_num = QLabel(str(self.slider.titles[i+1]))
-                last_num.setAlignment(Qt.AlignRight | Qt.AlignBottom)
+                last_num.setAlignment(Qt.AlignmentFlag.AlignRight | Qt.AlignmentFlag.AlignBottom)
                 self.top.addWidget(last_num,0, i, 1, 1)
                 break
 
@@ -140,5 +150,5 @@ if __name__ == '__main__':
     main_window = MainWin(size)
     main_window.show()
 
-    sys.exit(app.exec_())
+    sys.exit(app.exec())
 
