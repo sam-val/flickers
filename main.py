@@ -43,13 +43,13 @@ class FlickerThread(QThread):
             if self.val != 0:
                 self.show = not self.show
                 if self.show:
-                    sleeping_time = refresh_rate
-                else:
                     sleeping_time = (1-refresh_rate*self.val)/((self.val)+1)
                     if sleeping_time < 0:
                         sleeping_time = 0
+                else:
+                    sleeping_time = refresh_rate
             else:
-                self.show = False
+                self.show = True
 
             self.boolean_value_flipped.emit(self.show)
             time.sleep(sleeping_time)
