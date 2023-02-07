@@ -2,7 +2,7 @@
 
 ## Ever heard of the [``Flicker Fusion Threshold``][wiki]? Me neither.
 
-Basically it states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second...
+It states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second...
  
 ...the flickers will **``dissapear``**.
 
