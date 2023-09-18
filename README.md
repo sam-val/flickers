@@ -4,7 +4,7 @@
 
 It states that if an image flickers with **``enough speed``** to a certain ***``N``*** flickers per second....
  
-...the flickers will **``dissapear``**.
+...the flickers will **``dissapear``**. (your eyes can't see them any more)
 
 It's the mechanism that film projector uses to create the illusion of moving pictures.
 
